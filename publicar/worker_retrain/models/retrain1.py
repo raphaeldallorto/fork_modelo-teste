@@ -273,7 +273,7 @@ class ModeloRETRAIN(ModelPublicationInterfaceRETRAIN):
         run_name = "self_training"
         desc = "Experimentos automatizados do modelo para classificar se um tweet é bullying. E se for, qual o tipo."
         run_id = mlflow.start_run(run_name=run_name, description=desc).info.run_id
-        mlflow.tensorflow.autolog(every_n_iter=1)
+        mlflow.tensorflow.autolog()
         tags = {"Projeto": "Classificador de Cyberbullying Tweets", "team": "TESTES"}
         mlflow.set_tags(tags)
 
