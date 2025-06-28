@@ -117,7 +117,7 @@ def treinar(c):
     mlflow.set_experiment(experiment_name=c.nome_experimento)
     desc = "Experimentos para construção de um modelo para classificar se um tweet é bullying. E se for, qual o tipo."
     run_id = mlflow.start_run(run_name=id_exec, description=desc).info.run_id  # Para usar na verificação de resultados
-    mlflow.tensorflow.autolog(every_n_iter=1)
+    mlflow.tensorflow.autolog()
     tags = {"Projeto": "Classificador de Cyberbullying Tweets", "team": "TESTES"}
     mlflow.set_tags(tags)
 
