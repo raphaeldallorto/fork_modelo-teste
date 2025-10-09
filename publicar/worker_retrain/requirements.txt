@@ -80,7 +80,7 @@ ml_dtypes==0.5.3
 mlflow==3.4.0
 mlflow-skinny==3.4.0
 mlflow-tracing==3.4.0
-mllibprodest==1.9.0
+mllibprodest==1.8.10
 more-itertools==10.8.0
 namex==0.1.0
 numpy==2.3.3
