@@ -7,6 +7,7 @@ import logging
 import re
 import pandas as pd
 import numpy as np
+from tensorflow import keras
 from unicodedata import normalize
 from keras.utils import to_categorical
 from configs import arquivo_log
@@ -457,7 +458,8 @@ def salvar_modelo(t, le, modelo, hist, resultado_teste, tipo_modelo, nome_modelo
     LOGGER.info(f">>> Salvando o modelo '{nome_modelo}' em '{caminho_modelo}'")
 
     if tipo_modelo == "clf_rn_tfidf":
-        modelo.export(caminho_modelo)
+        # Para salvar no formato nativo Keras (.keras)
+        modelo.save(caminho_modelo + nome_modelo + ".keras")
     else:
         salvar_objeto(caminho_modelo, modelo, nome_modelo + '.pkl')
 
